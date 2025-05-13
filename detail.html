@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeoJourney – Country Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  />
+</head>
+<body>
+  <!-- Back Button -->
+  <button class="back-btn" onclick="history.back()">← Back</button>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <main class="container">
+    <!-- Country Name -->
+    <h1 id="countryName"></h1>
+
+    <!-- Best Time to Visit -->
+    <div id="bestTime" class="card hidden"></div>
+
+    <!-- Country Facts -->
+    <div id="countryDetails" class="card hidden"></div>
+
+    <!-- Weather Details -->
+    <div id="weatherDetails" class="card hidden"></div>
+
+    <!-- Image Gallery -->
+    <div id="imageGallery" class="gallery hidden"></div>
+
+    <!-- Map -->
+    <div id="map" class="card hidden" style="height:400px"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 GeoJourney. All rights reserved.</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Main Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
