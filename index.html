@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌍 GeoJourney</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loading Spinner (optional) -->
+  <div id="loadingOverlay" class="hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to GeoJourney</h1>
+      <p>Your adventure starts here</p>
+      <div class="search-bar-hero">
+        <input type="text" id="countryInput" placeholder="Enter a country..." />
+        <button id="exploreBtn">Explore</button>
+      </div>
+    </div>
+    <div class="scroll-down">&#x25BC;</div>
+  </section>
+
+  <!-- Featured Destinations Carousel -->
+  <section class="featured">
+    <h2>Featured Destinations</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="slide(-1)">‹</button>
+      <div class="slides">
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Paris">
+          <p>Paris</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/21014/pexels-photo.jpg" alt="Tokyo">
+          <p>Tokyo</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg" alt="Sydney">
+          <p>Sydney</p>
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="slide(1)">›</button>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="tips">
+    <h2>Travel Tips</h2>
+    <div class="tip-cards">
+      <div class="tip-card">
+        <h3>Pack Light</h3>
+        <p>Bring versatile clothing and travel-sized essentials.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Local Cuisine</h3>
+        <p>Try street food for the most authentic flavors.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Stay Safe</h3>
+        <p>Keep copies of your documents and stay aware of your surroundings.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 GeoJourney. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Redirect logic for the Explore button
+    document.getElementById('exploreBtn').addEventListener('click', () => {
+      const country = document.getElementById('countryInput').value.trim();
+      if (!country) return alert('Please enter a country name.');
+      window.location.href = `details.html?country=${encodeURIComponent(country)}`;
+    });
+
+    // Simple carousel
+    let slideIndex = 0;
+    function slide(dir) {
+      const slides = document.querySelectorAll('.slide');
+      slideIndex = (slideIndex + dir + slides.length) % slides.length;
+      document.querySelector('.slides')
+        .style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+  </script>
+</body>
+</html>
