@@ -1,0 +1,122 @@
+:root {
+    --primary: #00796b;
+    --dark: #004d40;
+    --light-bg: #f4f4f4;
+    --text: #333;
+    --card-bg: #fff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+  }
+  
+  /* Container */
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Hero on index.html */
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .search-section {
+    margin-top: 1rem;
+  }
+  .search-section input {
+    padding: .75rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+  .search-section button {
+    padding: .75rem 1rem;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background .3s;
+  }
+  .search-section button:hover {
+    background: var(--dark);
+  }
+  
+  /* Back Button */
+  .back-btn {
+    margin: 1rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--primary);
+  }
+  
+  /* Cards & Gallery */
+  .card, .gallery {
+    background: var(--card-bg);
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .gallery img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform .2s;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Loading Overlay */
+  #loadingOverlay {
+    position: fixed; inset:0;
+    background: rgba(255,255,255,0.8);
+    display: flex; align-items:center; justify-content:center;
+    z-index:1000;
+  }
+  .spinner {
+    width: 50px; height:50px;
+    border:6px solid #ccc;
+    border-top-color: var(--primary);
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Animations */
+  @keyframes spin { to {transform:rotate(360deg);} }
+  @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  
+  /* Map */
+  #map {
+    border-radius:8px;
+    margin-top:1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align:center;
+    padding:2rem 1rem;
+    background:var(--dark);
+    color:#fff;
+    margin-top:2rem;
+  }
+  
+  .hidden { display: none; }
+  
